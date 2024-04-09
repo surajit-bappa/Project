@@ -10,9 +10,6 @@
 <script src="<?php echo $this->config->item('css_images_js_base_url'); ?>js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
 <script src="<?php echo $this->config->item('css_images_js_base_url'); ?>js/jquery.nicescroll.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $this->config->item('css_images_js_base_url'); ?>js/flot-chart/excanvas.min.js"></script>
-<!-- DataTables -->
-<script src="<?php echo $this->config->item('css_images_js_base_url'); ?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo $this->config->item('css_images_js_base_url'); ?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script src="<?php echo $this->config->item('css_images_js_base_url'); ?>js/skycons/skycons.js"></script>
 <script src="<?php echo $this->config->item('css_images_js_base_url'); ?>js/jquery.scrollTo/jquery.scrollTo.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
