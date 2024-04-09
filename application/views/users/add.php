@@ -35,7 +35,7 @@ $(function() {
                             <form class="form-horizontal no-margin" id="frmForAdd" name="frm" action="<?php echo base_url();?>users/do_add" method="POST">
                             
                           <div class="form-group">
-                                        <label class="col-sm-3 control-label">Scheme Type</label>
+                                        <label class="col-sm-3 control-label">Scheme Type <font color="red">*</font></label>
                                         <div class="col-sm-6">
                                         <select class="form-control" id="scheme_type" name="scheme_type">
 					<option value="">Select Scheme</option>
@@ -54,7 +54,7 @@ $(function() {
                                 </div>
                                 
                                 <div class="form-group">
-                                        <label class="col-sm-3 control-label">First Name*</label>
+                                        <label class="col-sm-3 control-label">First Name <font color="red">*</font></label>
                                         <div class="col-sm-6">
                                                 <input type="text" class="form-control custom-required" id="first_name" name="first_name">
                                                  <?php echo form_error('first_name'); ?>
@@ -63,7 +63,7 @@ $(function() {
                                 </div>
                                
                                 <div class="form-group">
-                                        <label class="col-sm-3 control-label">Last Name*</label>
+                                        <label class="col-sm-3 control-label">Last Name <font color="red">*</font></label>
                                         <div class="col-sm-6">
                                                 <input type="text" class="form-control custom-required" id="last_name" name="last_name">
                                                  <?php echo form_error('last_name'); ?>
@@ -72,7 +72,7 @@ $(function() {
                                 </div>
                                 
                                 <div class="form-group">
-                                        <label class="col-sm-3 control-label">Email*</label>
+                                        <label class="col-sm-3 control-label">Email <font color="red">*</font></label>
                                         <div class="col-sm-6">
                                                 <input type="text" class="form-control custom-required" id="email" name="email">
                                                  <?php echo form_error('email'); ?>   
@@ -81,14 +81,14 @@ $(function() {
                                 </div>
 				
 				<div class="form-group">
-                                        <label class="col-sm-3 control-label">Mobile Number*</label>
+                                        <label class="col-sm-3 control-label">Mobile Number <font color="red">*</font></label>
                                         <div class="col-sm-6">
                                                 <input type="text" maxlength="10" class="form-control custom-required" id="phone" name="phone">
                                                  <?php echo form_error('phone'); ?>   
                                         </div>
                                 </div>
 				<div class="form-group">
-                                        <label class="col-sm-3 control-label">Gender*</label>
+                                        <label class="col-sm-3 control-label">Gender <font color="red">*</font></label>
                                          <div class="col-lg-6">
                                             
                                             <label class="checkbox-inline">
@@ -101,7 +101,7 @@ $(function() {
                                         </div>
                                 </div>
                                 <div class="form-group">
-                                        <label class="col-sm-3 control-label"> Date of Birth*</label>
+                                        <label class="col-sm-3 control-label"> Date of Birth <font color="red">*</font></label>
                                          <div class="col-lg-6">
                                            <input type="text" class="form-control date_of_birth" id="datepicker" name="date_of_birth" placeholder="Date of Birth" autofocus required readonly="true">
                                        <?php echo form_error('date_of_birth'); ?>
@@ -115,9 +115,6 @@ $(function() {
                                                 </button>
                                         </div>
                                 </div>
-				
-				
-                                
                                 <div class="clearfix"></div>
                             </form>
                         </div>			
@@ -125,6 +122,4 @@ $(function() {
             </div>
 	</div>
 </section>
-
-
 <?php $this->load->view('footer'); ?>
