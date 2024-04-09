@@ -1,7 +1,5 @@
 <?php $this->load->view('header'); ?>
-
 <script type="text/javascript">
-
 $(document).ready(function() {        
    $("#frmForAdd").validate({
             rules: {
@@ -18,14 +16,13 @@ $(document).ready(function() {
                     required: "Please enter scheme name",
                 },
                 authorized_by: {
-                    required: "Please select authorized by"
+                    required: "Please select approved by"
                    
                 }
             }
         });
 });
 </script>
-
 <section id="main-content" class="">
 <section class="wrapper">
 	<div class="row">
@@ -39,16 +36,16 @@ $(document).ready(function() {
 								<input type="hidden" id="user_id" name="id" value="<?php echo $schemes->id; ?>">
 
                                 <div class="form-group">
-                                        <label class="col-sm-3 control-label">Scheme Name*:</label>
+                                        <label class="col-sm-3 control-label">Scheme Name <font color="red">*</font>:</label>
                                         <div class="col-sm-6">
                                                 <input type="text" class="form-control custom-required" id="schemeName" name="schemeName" value="<?php echo $schemes->name;?>">
                                         </div>
                                 </div>
                                  <div class="form-group">
-                                        <label class="col-sm-3 control-label">Authorized By </label>
+                                        <label class="col-sm-3 control-label">Approved By <font color="red">*</font>: </label>
                                         <div class="col-sm-6">
                                         <select class="form-control" id="authorized_by" name="authorized_by">
-                                        <option value=''>Select Authorized By</option>
+                                        <option value=''>Select Approved By</option>
                                          <?php 
                                               if(!empty($authorization_list)){
                                                  foreach ($authorization_list as $key => $value) { 
@@ -58,8 +55,7 @@ $(document).ready(function() {
                                                 {
                                                     $selected = 'selected';
                                                 }
-                                                echo '<option value="'.$value->id.'" '.$selected.'>'.ucfirst($value->user_type).'</option>';   
-                                                                                            
+                                                echo '<option value="'.$value->id.'" '.$selected.'>'.ucfirst($value->user_type).'</option>';                                         
                                                 }
                                                }
                                           ?>
@@ -67,7 +63,7 @@ $(document).ready(function() {
                                         </div>
                                 </div>
                                 <div class="form-group">
-                                        <label class="col-sm-3 control-label">Status</label>
+                                        <label class="col-sm-3 control-label">Status <font color="red">*</font>:</label>
                                          <div class="col-lg-6">
                                               <label class="checkbox-inline">
                                                    
@@ -87,7 +83,6 @@ $(document).ready(function() {
                                                 </button>
                                         </div>
                                 </div>
-				
                                 <div class="clearfix"></div>
                             </form>
                         </div>			
@@ -96,5 +91,4 @@ $(document).ready(function() {
 	</div>
 </section>
 </section>
-  
 <?php $this->load->view('footer'); ?>
