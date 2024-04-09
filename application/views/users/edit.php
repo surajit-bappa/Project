@@ -1,7 +1,6 @@
 <?php $this->load->view('header'); ?>
  <script src="http://localhost/Project/assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="http://localhost/Project/assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-
 <script>
     $(function()
       {
@@ -23,12 +22,8 @@
             }
             return false;
         }); 
-    });
-    
-    
-    
+    });   
 </script>
-
 <section id="main-content" class="">
 <section class="wrapper">
 	<div class="row">
@@ -39,11 +34,9 @@
                         </header>
                         <div class="panel-body">				
                             <form class="form-horizontal no-margin" id="frmForAdd" name="frm" action="<?php echo base_url();?>users/do_edit" method="POST" >
-								<input type="hidden" id="user_id" name="id" value="<?php echo $users->id; ?>">
-                                
+			    <input type="hidden" id="user_id" name="id" value="<?php echo $users->id; ?>">
                                 <div class="form-group">
-                            <label class="col-sm-3 control-label"> Scheme Type:</label>  
-                   
+                            <label class="col-sm-3 control-label"> Scheme Type <font color="red">*</font>:</label>  
                           <div class="col-sm-6">
                                  <select class="form-control" id="scheme_type" name="scheme_type">
                                     <option value="">Select Scheme Type</option>
@@ -67,21 +60,21 @@
                          </div>
                           
                             <div class="form-group">
-                                    <label class="col-sm-3 control-label">First Name*:</label>
+                                    <label class="col-sm-3 control-label">First Name <font color="red">*</font>:</label>
                                     <div class="col-sm-6">
                                             <input type="text" class="form-control custom-required" id="first_name" name="first_name" value="<?php echo $users->first_name;?>">
                                      <?php echo form_error('first_name'); ?>
                                     </div>
                             </div>
                             <div class="form-group">
-                                        <label class="col-sm-3 control-label">Last Name*:</label>
+                                        <label class="col-sm-3 control-label">Last Name <font color="red">*</font>:</label>
                                         <div class="col-sm-6">
                                                 <input type="text" class="form-control custom-required" id="last_name" name="last_name" value="<?php echo $users->last_name;?>">
                                            <?php echo form_error('last_name'); ?>
                                           </div>
                             </div>
                               <div class="form-group">
-                                        <label class="col-sm-3 control-label">Email*:</label>
+                                        <label class="col-sm-3 control-label">Email <font color="red">*</font>:</label>
                                         <div class="col-sm-6">
                                                 <input type="text" class="form-control custom-required" id="email" name="email" value="<?php echo $users->email;?>" onkeyup="emailCheck(this)">
                                                  <div class="emailError"></div>
@@ -90,7 +83,7 @@
                             </div>
 
                             <div class="form-group">
-                                        <label class="col-sm-3 control-label">Mobile Number*:</label>
+                                        <label class="col-sm-3 control-label">Mobile Number <font color="red">*</font>:</label>
                                         <div class="col-sm-6">
                                                 <input type="test" class="form-control custom-required" id="mobile_no" name="phone" value="<?php echo $users->phone;?>" maxlength="10"  onkeyup="phoneCheck(this)">
                                                 <div class="phoneError"></div>
@@ -99,7 +92,7 @@
                                          
                             </div>
                             <div class="form-group">
-                                        <label class="col-sm-3 control-label">Gender*</label>
+                                        <label class="col-sm-3 control-label">Gender <font color="red">*</font></label>
                                          <div class="col-lg-6">
                                             
                                             <label class="checkbox-inline">
@@ -113,13 +106,13 @@
                                 </div>
                           
                             <div class="form-group">
-                                  <label class="col-sm-3 control-label">Date of Birth*:</label>   
+                                  <label class="col-sm-3 control-label">Date of Birth <font color="red">*</font>:</label>   
                                   <div class="col-sm-6">
                                     <input type="text" class="form-control custom-required" id="datepicker" name="date_of_birth" readonly="true" value="<?php echo $users->date_of_birth;?>">
                                     <?php echo form_error('date_of_birth'); ?>
                              </div>
                             </div>
-			                	<div class="form-group">
+			        <div class="form-group">
                                         <div class="col-lg-offset-3 col-lg-3">
                                                 <input type="submit" name="submit" value="Update" class="btn btn-info updatebutton">
                                                 <button class="btn" type="button" onClick="javascript:window.location='<?php echo base_url();?>users';" >
@@ -127,7 +120,6 @@
                                                 </button>
                                         </div>
                                 </div>
-				
                                 <div class="clearfix"></div>
                             </form>
                         </div>			
@@ -138,10 +130,8 @@
 </section>
 <script type="text/javascript">
     function emailCheck(selectObject){
-
       var email = selectObject.value;
       var user_id = $('#user_id').val();
-
       $.ajax({
           url: "<?php echo base_url(); ?>users/checkEmail",
           type: 'post',
@@ -164,7 +154,6 @@
      }
 
     function phoneCheck(selectObject){
-
       var phone = selectObject.value;
       var user_id = $('#user_id').val();
      
@@ -188,6 +177,5 @@
           }
       });
      }
-
   </script>
 <?php $this->load->view('footer'); ?>
