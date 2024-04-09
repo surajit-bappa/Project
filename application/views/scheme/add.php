@@ -1,7 +1,5 @@
 <?php $this->load->view('header'); ?>
-
 <script type="text/javascript">
-
 $(document).ready(function() {        
    $("#frmForAdd").validate({
             rules: {
@@ -18,7 +16,7 @@ $(document).ready(function() {
                     required: "Please enter scheme name",
                 },
                 authorized_by: {
-                    required: "Please select authorized by"
+                    required: "Please select approved by"
                    
                 }
             }
@@ -37,21 +35,17 @@ $(document).ready(function() {
                         </header>
                         <div class="panel-body">				
                             <form class="form-horizontal no-margin" id="frmForAdd" name="frm" action="<?php echo base_url();?>schemes/do_add" method="POST" >
-                            
-                      
-                                
                                 <div class="form-group">
-                                        <label class="col-sm-3 control-label">Scheme Name*</label>
+                                        <label class="col-sm-3 control-label">Scheme Name <font color="red">*</font>:</label>
                                         <div class="col-sm-6">
                                                 <input type="text" class="form-control custom-required" id="schemeName" name="schemeName">
                                         </div>
                                 </div>
-
                                 <div class="form-group">
-                                        <label class="col-sm-3 control-label">Authorized By </label>
+                                        <label class="col-sm-3 control-label">Approved By <font color="red">*</font>:</label>
                                         <div class="col-sm-6">
                                         <select class="form-control" id="authorized_by" name="authorized_by">
-                                        <option value=''>Select Authorized By</option>
+                                        <option value=''>Select Approved By</option>
                                          <?php 
                                       if(!empty($user_level_list)){
                                          foreach ($user_level_list as $key => $value) { 
@@ -65,7 +59,7 @@ $(document).ready(function() {
                                         </div>
                                 </div>
                                          <div class="form-group">
-                                        <label class="col-sm-3 control-label">Status</label>
+                                        <label class="col-sm-3 control-label">Status <font color="red">*</font>:</label>
                                          <div class="col-lg-6">
                                             <label class="checkbox-inline">
                                                 <input type="radio" id="status" name="status" value="1" checked="true">  <label>Yes</label>
@@ -75,7 +69,6 @@ $(document).ready(function() {
                                             </label>
                                         </div>
                                 </div>
-                         
 				<div class="form-group">
                                         <div class="col-lg-offset-3 col-lg-3">
                                                 <input type="submit" name="submit" value="Add" class="btn btn-info">
@@ -84,9 +77,6 @@ $(document).ready(function() {
                                                 </button>
                                         </div>
                                 </div>
-				
-				
-                                
                                 <div class="clearfix"></div>
                             </form>
                         </div>			
@@ -94,6 +84,4 @@ $(document).ready(function() {
             </div>
 	</div>
 </section>
-
-
 <?php $this->load->view('footer'); ?>
